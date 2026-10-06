@@ -3,42 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tasty Coffee в Актау | Свежеобжаренный кофе премиум-класса</title>
+    <title>Coffein Aktau | Свежеобжаренный кофе Tasty Coffee в г. Актау</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts: Playfair Display & Inter -->
+    <!-- Google Fonts: Inter & Montserrat -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
 
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        coffee: {
-                            900: '#1A0F11', // Deep roast
-                            800: '#2C1A1D', // Dark chocolate / Coffee dark
-                            700: '#42282C',
-                            600: '#5C383D',
-                            500: '#8C545C',
-                        },
-                        caramel: {
-                            DEFAULT: '#C8963E',
-                            light: '#E5B35C',
-                            dark: '#A4782A'
-                        },
-                        cream: {
-                            DEFAULT: '#FDFBF7',
-                            dark: '#F4EFE6',
-                            muted: '#E6DEC',
+                        tasty: {
+                            black: '#121212',
+                            card: '#1A1A1A',
+                            border: '#2A2A2A',
+                            orange: '#E65100', // Tasty Coffee style terracotta/orange accent
+                            orangeHover: '#F57C00',
+                            gold: '#D4AF37',
+                            grayText: '#A0A0A0',
+                            bgLight: '#FAF8F5'
                         }
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
+                        display: ['Montserrat', 'sans-serif']
                     }
                 }
             }
@@ -47,492 +40,604 @@
 
     <style>
         body {
-            background-color: #FDFBF7;
-            color: #2C1A1D;
+            background-color: #121212;
+            color: #FFFFFF;
             font-family: 'Inter', sans-serif;
         }
-        .hero-bg {
-            background: linear-gradient(135deg, rgba(26, 15, 17, 0.92) 0%, rgba(44, 26, 29, 0.85) 100%), 
+        .hero-pattern {
+            background: linear-gradient(180deg, rgba(18, 18, 18, 0.7) 0%, rgba(18, 18, 18, 1) 100%), 
                         url('https://images.unsplash.com/photo-1447933601403-0c6688de566e?q=80&w=1600&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
         }
-        .gold-glow {
-            box-shadow: 0 0 25px rgba(200, 150, 62, 0.25);
-        }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(200, 150, 62, 0.15);
-        }
-        .glass-card-dark {
-            background: rgba(44, 26, 29, 0.85);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(200, 150, 62, 0.2);
-        }
         /* Custom scrollbar */
         ::-webkit-scrollbar {
-            width: 8px;
+            width: 6px;
         }
         ::-webkit-scrollbar-track {
-            background: #FDFBF7;
+            background: #121212;
         }
         ::-webkit-scrollbar-thumb {
-            background: #C8963E;
-            border-radius: 4px;
+            background: #E65100;
+            border-radius: 3px;
+        }
+        .flavor-badge {
+            background: rgba(230, 81, 0, 0.15);
+            border: 1px solid rgba(230, 81, 0, 0.3);
         }
     </style>
 </head>
-<body class="antialiased selection:bg-caramel selection:text-white">
+<body class="antialiased selection:bg-tasty-orange selection:text-white pb-20 sm:pb-0">
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="bg-tasty-orange text-white text-xs py-2 px-4 text-center font-medium tracking-wide">
+        <i class="fa-solid fa-fire mr-1.5"></i>
+        Официальный реселлер <strong>Tasty Coffee</strong> в г. Актау | Свежая обжарка каждую неделю! 
+        <span class="hidden md:inline">📍 15 мкр, 69 дом (м-н «Кибернет»)</span>
+    </div>
 
     <!-- HEADER NAVBAR -->
-    <header id="header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-coffee-800/90 backdrop-blur-md border-b border-caramel/20 text-white">
+    <header class="sticky top-0 z-40 bg-tasty-black/95 backdrop-blur-md border-b border-tasty-border">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <!-- Brand Logo -->
+            <!-- Brand Logo with exact visual match to image -->
             <a href="#" class="flex items-center gap-3 group">
-                <div class="w-10 h-10 rounded-full bg-caramel flex items-center justify-center text-coffee-800 font-bold text-xl group-hover:scale-105 transition-transform">
-                    <i class="fa-solid fa-mug-hot"></i>
+                <div class="w-12 h-12 rounded-full bg-[#3A2117] border border-[#523122] flex items-center justify-center p-1 shadow-lg group-hover:scale-105 transition-transform shrink-0">
+                    <svg viewBox="0 0 200 200" class="w-full h-full text-white">
+                        <!-- 3 Coffee Beans -->
+                        <g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round">
+                            <path d="M 70 65 C 55 40, 90 20, 100 45 C 110 20, 145 40, 130 65 C 115 85, 85 85, 70 65 Z" fill="currentColor"/>
+                            <path d="M 85 30 Q 100 50 115 70" stroke="#3A2117" stroke-width="6"/>
+                            <path d="M 40 85 C 30 65, 60 50, 70 70 C 80 50, 110 65, 95 85 C 80 100, 50 100, 40 85 Z" fill="currentColor"/>
+                            <path d="M 52 58 Q 67 75 80 92" stroke="#3A2117" stroke-width="5"/>
+                            <path d="M 105 85 C 95 65, 125 50, 135 70 C 145 50, 175 65, 160 85 C 145 100, 115 100, 105 85 Z" fill="currentColor"/>
+                            <path d="M 118 58 Q 133 75 146 92" stroke="#3A2117" stroke-width="5"/>
+                        </g>
+                        <!-- COFFEE IN Text -->
+                        <text x="50%" y="132" text-anchor="middle" fill="white" font-family="'Montserrat', sans-serif" font-weight="800" font-size="28" letter-spacing="2">COFFEE</text>
+                        <ellipse cx="162" cy="124" rx="18" ry="16" fill="none" stroke="white" stroke-width="5"/>
+                        <text x="162" y="131" text-anchor="middle" fill="white" font-family="'Montserrat', sans-serif" font-weight="800" font-size="18">IN</text>
+                    </svg>
                 </div>
                 <div>
-                    <span class="font-serif text-2xl font-bold tracking-wide text-white block leading-none">TASTY COFFEE</span>
-                    <span class="text-[10px] text-caramel tracking-widest uppercase font-semibold">Актау • 15 мкр 69 дом</span>
+                    <span class="font-display font-black text-lg tracking-wider text-white block uppercase leading-none">COFFEE <span class="text-tasty-orange">IN</span></span>
+                    <span class="text-[9px] text-gray-400 font-semibold tracking-widest uppercase block mt-1">МАГАЗИН ЗЕРНОВОГО КОФЕ</span>
                 </div>
             </a>
 
             <!-- Desktop Nav -->
-            <nav class="hidden md:flex items-center gap-8 font-medium text-sm">
-                <a href="#about" class="hover:text-caramel transition-colors">О нас</a>
-                <a href="#calculator" class="hover:text-caramel transition-colors">Подбор кофе</a>
-                <a href="#menu" class="hover:text-caramel transition-colors">Ассортимент</a>
-                <a href="#contacts" class="hover:text-caramel transition-colors">Контакты</a>
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-gray-300">
+                <a href="#catalog" class="hover:text-tasty-orange transition-colors">Каталог Кофе</a>
+                <a href="#drips" class="hover:text-tasty-orange transition-colors">Дрип-пакеты</a>
+                <a href="#why-us" class="hover:text-tasty-orange transition-colors">О Tasty Coffee</a>
+                <a href="#location" class="hover:text-tasty-orange transition-colors">Контакты & Карта</a>
             </nav>
 
-            <!-- Action Button -->
-            <div class="hidden sm:flex items-center gap-3">
-                <a href="https://wa.me/77000000000?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%AF%20%D1%85%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BD%D0%B0%D0%BB%D0%B8%D1%87%D0%B8%D0%B5%20%D0%BA%D0%BE%D1%84%D0%B5%20Tasty%20Coffee%20%D0%B2%20%D0%90%D0%BA%D1%82%D0%B0%D1%83" 
+            <!-- Actions (Cart & WhatsApp) -->
+            <div class="flex items-center gap-4">
+                <a href="https://wa.me/77000000000?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%AF%20%D0%B8%D0%B7%20%D0%90%D0%BA%D1%82%D0%B0%D1%83%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BD%D0%B0%D0%BB%D0%B8%D1%87%D0%B8%D0%B5%20Tasty%20Coffee" 
                    target="_blank" 
-                   class="bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2.5 rounded-full font-medium text-sm flex items-center gap-2 transition-all shadow-md hover:shadow-lg">
-                    <i class="fa-brands fa-whatsapp text-lg"></i>
-                    <span>Написать в WhatsApp</span>
+                   class="hidden sm:flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2.5 rounded-xl font-semibold text-xs transition-all shadow-md">
+                    <i class="fa-brands fa-whatsapp text-base"></i>
+                    <span>WhatsApp</span>
                 </a>
+
+                <!-- Cart Button -->
+                <button onclick="toggleCartDrawer()" class="relative bg-tasty-card border border-tasty-border p-3 rounded-xl hover:border-tasty-orange transition-all flex items-center gap-2">
+                    <i class="fa-solid fa-bag-shopping text-tasty-orange text-lg"></i>
+                    <span class="hidden sm:inline text-xs font-bold text-white">Корзина</span>
+                    <span id="cart-count" class="bg-tasty-orange text-white text-[11px] font-bold w-5 h-5 rounded-full flex items-center justify-center -top-1 -right-1">0</span>
+                </button>
             </div>
-
-            <!-- Mobile Menu Toggle Button -->
-            <button id="mobile-menu-btn" class="md:hidden text-white hover:text-caramel focus:outline-none p-2" aria-label="Toggle Menu">
-                <i class="fa-solid fa-bars text-2xl"></i>
-            </button>
-        </div>
-
-        <!-- Mobile Menu Overlay -->
-        <div id="mobile-menu" class="hidden md:hidden bg-coffee-800 border-b border-caramel/20 px-4 pt-2 pb-6 space-y-4">
-            <a href="#about" class="mobile-link block py-2 text-gray-200 hover:text-caramel font-medium border-b border-coffee-700">О нас</a>
-            <a href="#calculator" class="mobile-link block py-2 text-gray-200 hover:text-caramel font-medium border-b border-coffee-700">Подбор кофе</a>
-            <a href="#menu" class="mobile-link block py-2 text-gray-200 hover:text-caramel font-medium border-b border-coffee-700">Ассортимент</a>
-            <a href="#contacts" class="mobile-link block py-2 text-gray-200 hover:text-caramel font-medium border-b border-coffee-700">Контакты и Навигация</a>
-            
-            <a href="https://wa.me/77000000000?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%AF%20%D1%85%D0%BE%D1%87%D1%83%20%D1%81%D0%B4%D0%B5%D0%BB%D0%B0%D1%82%D1%8C%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%20Tasty%20Coffee" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-3 rounded-xl font-medium text-center flex items-center justify-center gap-2">
-                <i class="fa-brands fa-whatsapp text-xl"></i>
-                Заказать через WhatsApp
-            </a>
         </div>
     </header>
 
     <!-- HERO SECTION -->
-    <section class="relative min-h-screen hero-bg flex items-center pt-24 pb-16 px-4 sm:px-6 lg:px-8 text-white overflow-hidden">
-        <!-- Decorative blurred circles -->
-        <div class="absolute -top-20 -left-20 w-96 h-96 bg-caramel/20 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute bottom-10 right-10 w-80 h-80 bg-coffee-500/20 rounded-full blur-3xl pointer-events-none"></div>
-
-        <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
-            <!-- Left Hero Content -->
+    <section class="relative min-h-[85vh] hero-pattern flex items-center py-16 px-4 sm:px-6 lg:px-8 border-b border-tasty-border">
+        <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
             <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                <!-- Location Badge -->
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-caramel/20 border border-caramel/40 text-caramel-light text-xs sm:text-sm font-semibold tracking-wide uppercase">
-                    <i class="fa-solid fa-location-dot"></i>
-                    г. Актау • 15 мкр, 69 дом (м-н «Кибернет»)
+                <!-- Exact Brand Circle Badge -->
+                <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-[#3A2117]/80 border border-tasty-orange/30 backdrop-blur-md">
+                    <div class="w-8 h-8 rounded-full bg-tasty-black flex items-center justify-center p-1">
+                        <svg viewBox="0 0 200 200" class="w-full h-full text-white">
+                            <g fill="currentColor">
+                                <path d="M 70 65 C 55 40, 90 20, 100 45 C 110 20, 145 40, 130 65 C 115 85, 85 85, 70 65 Z"/>
+                                <path d="M 40 85 C 30 65, 60 50, 70 70 C 80 50, 110 65, 95 85 C 80 100, 50 100, 40 85 Z"/>
+                                <path d="M 105 85 C 95 65, 125 50, 135 70 C 145 50, 175 65, 160 85 C 145 100, 115 100, 105 85 Z"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-white">COFFEE IN • г. Актау</span>
                 </div>
 
-                <!-- Main Title -->
-                <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight">
-                    Свежеобжаренный <br class="hidden sm:inline">
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-caramel-light via-caramel to-amber-200">Tasty Coffee</span> в Актау!
+                <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-black leading-tight uppercase tracking-tight text-white">
+                    Легендарный <br>
+                    <span class="text-tasty-orange">Tasty Coffee</span> <br>
+                    в наличии в Актау
                 </h1>
 
-                <!-- Subtitle -->
-                <p class="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
-                    Откройте для себя бодрящий вкус премиального кофе свежей обжарки. Кофе в зернах, идеальный помол под ваш способ заваривания, авторские кофейные напитки и аксессуары.
+                <p class="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+                    Более 30 сортов свежей обжарки напрямую от лучших ростеров. Моносорта, эспрессо-смеси, микролоты и дрип-пакеты. Бесплатный помол под ваш способ заваривания на месте!
                 </p>
 
-                <!-- CTA Action Buttons -->
+                <!-- Features stats -->
+                <div class="grid grid-cols-3 gap-4 pt-4 max-w-lg mx-auto lg:mx-0 text-center lg:text-left">
+                    <div class="border-l-2 border-tasty-orange pl-3">
+                        <div class="font-display font-black text-xl sm:text-2xl text-white">100%</div>
+                        <div class="text-xs text-gray-400">Свежесть зерна</div>
+                    </div>
+                    <div class="border-l-2 border-tasty-orange pl-3">
+                        <div class="font-display font-black text-xl sm:text-2xl text-white">15 мкр</div>
+                        <div class="text-xs text-gray-400">69 дом (Кибернет)</div>
+                    </div>
+                    <div class="border-l-2 border-tasty-orange pl-3">
+                        <div class="font-display font-black text-xl sm:text-2xl text-white">100%</div>
+                        <div class="text-xs text-gray-400">Оригинал Ижевск</div>
+                    </div>
+                </div>
+
                 <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
-                    <a href="#menu" class="w-full sm:w-auto px-8 py-4 bg-caramel hover:bg-caramel-light text-coffee-900 font-bold rounded-xl transition-all transform hover:-translate-y-0.5 shadow-lg shadow-caramel/20 text-center flex items-center justify-center gap-3">
-                        <i class="fa-solid fa-mug-saucer"></i>
-                        <span>Наше Меню и Цены</span>
+                    <a href="#catalog" class="w-full sm:w-auto px-8 py-4 bg-tasty-orange hover:bg-tasty-orangeHover text-white font-bold rounded-xl text-sm transition-all shadow-lg shadow-tasty-orange/30 text-center uppercase tracking-wider flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-mug-hot"></i>
+                        <span>Перейти в Каталог</span>
                     </a>
-                    
-                    <a href="#contacts" class="w-full sm:w-auto px-8 py-4 bg-coffee-800/80 hover:bg-coffee-700 border border-caramel/30 text-white font-semibold rounded-xl transition-all text-center flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-map-pin text-caramel"></i>
-                        <span>Как нас найти</span>
+                    <a href="#location" class="w-full sm:w-auto px-8 py-4 bg-tasty-card hover:bg-tasty-border text-white border border-tasty-border font-bold rounded-xl text-sm transition-all text-center flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-map-pin text-tasty-orange"></i>
+                        <span>Забрать в 15 мкр</span>
                     </a>
-                </div>
-
-                <!-- Features Bullets Under Hero -->
-                <div class="grid grid-cols-3 gap-4 pt-8 border-t border-white/10 text-center lg:text-left">
-                    <div>
-                        <div class="text-caramel font-bold text-xl sm:text-2xl font-serif">100%</div>
-                        <div class="text-xs sm:text-sm text-gray-400">Арабика Specialty</div>
-                    </div>
-                    <div>
-                        <div class="text-caramel font-bold text-xl sm:text-2xl font-serif">Свежий</div>
-                        <div class="text-xs sm:text-sm text-gray-400">Помол на месте</div>
-                    </div>
-                    <div>
-                        <div class="text-caramel font-bold text-xl sm:text-2xl font-serif">15 мкр</div>
-                        <div class="text-xs sm:text-sm text-gray-400">Удобный заезд</div>
-                    </div>
                 </div>
             </div>
 
-            <!-- Right Hero Visual Card -->
+            <!-- Hero Product Feature Card -->
             <div class="lg:col-span-5 flex justify-center">
-                <div class="relative w-full max-w-md">
-                    <!-- Glass Card Banner -->
-                    <div class="glass-card-dark p-6 sm:p-8 rounded-3xl shadow-2xl relative z-10 space-y-6">
-                        <div class="relative rounded-2xl overflow-hidden h-64 shadow-inner">
-                            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=800&auto=format&fit=crop" 
-                                 alt="Tasty Coffee Bag and Cup" 
-                                 class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
-                            <div class="absolute top-3 right-3 bg-caramel text-coffee-900 font-bold text-xs px-3 py-1.5 rounded-full shadow-md">
-                                Премиум Качество
-                            </div>
-                        </div>
-
-                        <div class="space-y-2">
-                            <div class="flex items-center justify-between text-xs text-caramel font-semibold uppercase tracking-wider">
-                                <span>Точка продаж в Актау</span>
-                                <span><i class="fa-solid fa-clock mr-1"></i>09:00 - 21:00</span>
-                            </div>
-                            <h3 class="text-xl font-bold font-serif text-white">Ждем вас в «Кибернет»</h3>
-                            <p class="text-sm text-gray-300">
-                                Приходите за свежеобжаренным пачкой зерна домой или возьмите ароматный напиток с собой на прогулку!
-                            </p>
-                        </div>
-
-                        <!-- Quick Call to Action Inside Card -->
-                        <button onclick="openModal('Кофе с собой / Консультация')" class="w-full py-3 bg-white/10 hover:bg-white/20 text-caramel hover:text-white border border-caramel/40 rounded-xl font-medium text-sm transition-all flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-phone"></i>
-                            <span>Забронировать пачку / Предзаказ</span>
-                        </button>
+                <div class="bg-tasty-card border border-tasty-border p-6 rounded-3xl w-full max-w-md space-y-5 shadow-2xl relative">
+                    <div class="absolute -top-3 -right-3 bg-tasty-orange text-white text-[10px] font-black uppercase px-3 py-1 rounded-full shadow-lg">
+                        Бестселлер #1
                     </div>
 
-                    <!-- Glowing effect background -->
-                    <div class="absolute inset-0 bg-caramel/20 rounded-3xl blur-2xl -z-10 transform scale-95"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ABOUT & ADVANTAGES SECTION -->
-    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
-            <h2 class="text-xs sm:text-sm font-bold text-caramel uppercase tracking-widest">Преимущества</h2>
-            <p class="font-serif text-3xl sm:text-4xl font-bold text-coffee-800">Почему выбирают Tasty Coffee?</p>
-            <p class="text-gray-600 font-light">Мы гарантируем высокий стандарт обжарки, свежесть каждой пачки и неповторимый вкус в каждой чашке.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Advantage Card 1 -->
-            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:border-caramel/40 hover:shadow-xl transition-all duration-300 group">
-                <div class="w-14 h-14 rounded-2xl bg-cream-dark flex items-center justify-center text-caramel text-2xl mb-6 group-hover:bg-caramel group-hover:text-white transition-colors">
-                    <i class="fa-solid fa-fire-flame-curved"></i>
-                </div>
-                <h3 class="font-serif text-xl font-bold text-coffee-800 mb-3">Идеальная Обжарка</h3>
-                <p class="text-gray-600 text-sm leading-relaxed">
-                    Кофе обжаривается на современном оборудовании с точным контролем профилей обжарки для раскрытия всех оттенков вкуса.
-                </p>
-            </div>
-
-            <!-- Advantage Card 2 -->
-            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:border-caramel/40 hover:shadow-xl transition-all duration-300 group">
-                <div class="w-14 h-14 rounded-2xl bg-cream-dark flex items-center justify-center text-caramel text-2xl mb-6 group-hover:bg-caramel group-hover:text-white transition-colors">
-                    <i class="fa-solid fa-seedling"></i>
-                </div>
-                <h3 class="font-serif text-xl font-bold text-coffee-800 mb-3">100% Арабика</h3>
-                <p class="text-gray-600 text-sm leading-relaxed">
-                    Отборные зерна с лучших плантаций Бразилии, Эфиопии, Колумбии и Кении напрямую от проверенных фермеров.
-                </p>
-            </div>
-
-            <!-- Advantage Card 3 -->
-            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:border-caramel/40 hover:shadow-xl transition-all duration-300 group">
-                <div class="w-14 h-14 rounded-2xl bg-cream-dark flex items-center justify-center text-caramel text-2xl mb-6 group-hover:bg-caramel group-hover:text-white transition-colors">
-                    <i class="fa-solid fa-location-arrow"></i>
-                </div>
-                <h3 class="font-serif text-xl font-bold text-coffee-800 mb-3">Рядом с вами в Актау</h3>
-                <p class="text-gray-600 text-sm leading-relaxed">
-                    Вам не нужно ждать доставку неделями — свежий зерновой и молотый кофе всегда в наличии в 15 мкр (магазин «Кибернет»).
-                </p>
-            </div>
-
-            <!-- Advantage Card 4 -->
-            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:border-caramel/40 hover:shadow-xl transition-all duration-300 group">
-                <div class="w-14 h-14 rounded-2xl bg-cream-dark flex items-center justify-center text-caramel text-2xl mb-6 group-hover:bg-caramel group-hover:text-white transition-colors">
-                    <i class="fa-solid fa-gift"></i>
-                </div>
-                <h3 class="font-serif text-xl font-bold text-coffee-800 mb-3">Помол в подарок</h3>
-                <p class="text-gray-600 text-sm leading-relaxed">
-                    Бесплатно помолем выбранные зерна прямо при вас специально под ваш способ заваривания: Турка, Эспрессо, Френч-пресс.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- INTERACTIVE COFFEE SELECTOR -->
-    <section id="calculator" class="py-16 px-4 sm:px-6 lg:px-8 bg-coffee-800 text-white relative overflow-hidden">
-        <div class="max-w-5xl mx-auto">
-            <div class="text-center space-y-4 mb-12">
-                <span class="text-caramel font-semibold text-xs uppercase tracking-widest">Онлайн Подборщик</span>
-                <h2 class="font-serif text-3xl sm:text-4xl font-bold">Как вы предпочитаете заваривать кофе?</h2>
-                <p class="text-gray-300 text-sm sm:text-base max-w-xl mx-auto font-light">Выберите ваш любимый способ приготовления, и мы подберем идеальный сорт и степень помола!</p>
-            </div>
-
-            <!-- Brew Method Selection Grid -->
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10">
-                <button onclick="selectBrewMethod('turk', this)" class="brew-btn active p-5 rounded-2xl border-2 border-caramel bg-coffee-700/80 hover:bg-coffee-700 transition-all text-center flex flex-col items-center justify-center gap-3">
-                    <i class="fa-solid fa-fire text-3xl text-caramel"></i>
-                    <span class="font-semibold text-sm">Турка (Джезва)</span>
-                </button>
-
-                <button onclick="selectBrewMethod('espresso', this)" class="brew-btn p-5 rounded-2xl border-2 border-coffee-600 hover:border-caramel/50 bg-coffee-700/30 hover:bg-coffee-700 transition-all text-center flex flex-col items-center justify-center gap-3">
-                    <i class="fa-solid fa-mug-hot text-3xl text-caramel"></i>
-                    <span class="font-semibold text-sm">Эспрессо-машина</span>
-                </button>
-
-                <button onclick="selectBrewMethod('french', this)" class="brew-btn p-5 rounded-2xl border-2 border-coffee-600 hover:border-caramel/50 bg-coffee-700/30 hover:bg-coffee-700 transition-all text-center flex flex-col items-center justify-center gap-3">
-                    <i class="fa-solid fa-whiskey-glass text-3xl text-caramel"></i>
-                    <span class="font-semibold text-sm">Френч-пресс</span>
-                </button>
-
-                <button onclick="selectBrewMethod('filter', this)" class="brew-btn p-5 rounded-2xl border-2 border-coffee-600 hover:border-caramel/50 bg-coffee-700/30 hover:bg-coffee-700 transition-all text-center flex flex-col items-center justify-center gap-3">
-                    <i class="fa-solid fa-filter text-3xl text-caramel"></i>
-                    <span class="font-semibold text-sm">Фильтр / Воронка</span>
-                </button>
-            </div>
-
-            <!-- Recommendation Output Box -->
-            <div id="recommendation-result" class="glass-card-dark p-6 sm:p-8 rounded-3xl border border-caramel/30 flex flex-col sm:flex-row items-center gap-8 shadow-2xl">
-                <div class="w-full sm:w-1/3 flex justify-center">
-                    <img id="rec-img" src="https://images.unsplash.com/photo-1588854337236-6889d631faa8?q=80&w=500&auto=format&fit=crop" alt="Recommended Coffee" class="w-48 h-48 object-cover rounded-2xl shadow-lg">
-                </div>
-                <div class="w-full sm:w-2/3 space-y-4 text-center sm:text-left">
-                    <div class="inline-block px-3 py-1 rounded-full bg-caramel/20 text-caramel text-xs font-semibold">
-                        Рекомендуемый сорт для Турки
+                    <div class="relative h-64 rounded-2xl overflow-hidden bg-tasty-black flex items-center justify-center p-4">
+                        <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?q=80&w=800&auto=format&fit=crop" alt="Tasty Coffee Bag" class="h-full object-contain hover:scale-105 transition-transform duration-500">
                     </div>
-                    <h3 id="rec-title" class="font-serif text-2xl font-bold text-white">Бразилия Серрадо</h3>
-                    <p id="rec-desc" class="text-sm text-gray-300 leading-relaxed">
-                        Классический плотный кофе с нотами жареных орехов, темного шоколада и карамели. Ультратонкий помол идеально подходит для создания густой пенки в турке.
-                    </p>
-                    <div class="flex flex-wrap items-center justify-center sm:justify-start gap-4 pt-2">
-                        <span id="rec-price" class="text-xl font-bold text-caramel">4 800 ₸ <span class="text-xs text-gray-400 font-normal">/ 250г</span></span>
-                        <button onclick="openModalWithProduct('Бразилия Серрадо (под Турку)')" class="px-6 py-2.5 bg-caramel hover:bg-caramel-light text-coffee-900 font-bold rounded-xl text-sm transition-all shadow-md">
-                            Заказать со скидкой
+
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between text-xs text-tasty-orange font-bold uppercase tracking-wider">
+                            <span>Эспрессо-смесь</span>
+                            <span>Q-Score: 84.0</span>
+                        </div>
+                        <h3 class="font-display text-2xl font-black text-white">Эспрессо Натти (Nutty)</h3>
+                        <p class="text-xs text-gray-400">Шоколад, какао, жареный фундук, плотное карамельное тело.</p>
+                    </div>
+
+                    <div class="pt-2 flex items-center justify-between border-t border-tasty-border">
+                        <div>
+                            <span class="text-[10px] text-gray-400 block uppercase">В наличии в Актау</span>
+                            <span class="font-display font-extrabold text-xl text-white">4 800 ₸</span>
+                        </div>
+                        <button onclick="quickAddToCart('Эспрессо Натти', 4800, '250г', 'В зёрнах')" class="px-5 py-3 bg-tasty-orange hover:bg-tasty-orangeHover text-white text-xs font-bold rounded-xl uppercase tracking-wider transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-cart-plus"></i>
+                            <span>В корзину</span>
                         </button>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
-    <!-- PRODUCTS & MENU SECTION -->
-    <section id="menu" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div class="text-center max-w-3xl mx-auto space-y-4 mb-12">
-            <h2 class="text-xs sm:text-sm font-bold text-caramel uppercase tracking-widest">Ассортимент</h2>
-            <p class="font-serif text-3xl sm:text-4xl font-bold text-coffee-800">Каталог Tasty Coffee в Актау</p>
-            <p class="text-gray-600 font-light">Выберите любимый зерновой кофе, свежий напиток с собой или кофейные аксессуары.</p>
-        </div>
-
-        <!-- Filter Category Tabs -->
-        <div class="flex justify-center items-center gap-2 sm:gap-4 mb-12 flex-wrap">
-            <button onclick="filterCategory('all', this)" class="category-tab active px-5 py-2.5 rounded-full text-sm font-semibold bg-coffee-800 text-white shadow-md transition-all">
-                Всё меню
-            </button>
-            <button onclick="filterCategory('beans', this)" class="category-tab px-5 py-2.5 rounded-full text-sm font-semibold bg-white text-coffee-800 border border-gray-200 hover:border-caramel transition-all">
-                Кофе в зёрнах (250g / 1kg)
-            </button>
-            <button onclick="filterCategory('drinks', this)" class="category-tab px-5 py-2.5 rounded-full text-sm font-semibold bg-white text-coffee-800 border border-gray-200 hover:border-caramel transition-all">
-                Напитки с собой
-            </button>
-            <button onclick="filterCategory('accessories', this)" class="category-tab px-5 py-2.5 rounded-full text-sm font-semibold bg-white text-coffee-800 border border-gray-200 hover:border-caramel transition-all">
-                Аксессуары и Турки
-            </button>
-        </div>
-
-        <!-- Product Cards Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <!-- CATALOG SECTION -->
+    <section id="catalog" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+            <div>
+                <span class="text-xs font-bold text-tasty-orange uppercase tracking-widest block mb-1">Кофейная коллекция</span>
+                <h2 class="font-display text-3xl sm:text-4xl font-black text-white uppercase">Каталог Tasty Coffee</h2>
+            </div>
             
-            <!-- Item 1: Beans -->
-            <div class="product-item beans bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+            <p class="text-xs sm:text-sm text-gray-400 max-w-md">
+                Выберите понравившийся сорт. Мы бесплатно смолем зерно при самовывозе под Турку, Чашку или Эспрессо!
+            </p>
+        </div>
+
+        <!-- CATEGORY FILTERS -->
+        <div class="flex items-center gap-2 overflow-x-auto pb-4 mb-8 no-scrollbar">
+            <button onclick="filterProducts('all', this)" class="filter-btn active px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider bg-tasty-orange text-white border border-tasty-orange transition-all whitespace-nowrap">
+                Все сорта
+            </button>
+            <button onclick="filterProducts('espresso', this)" class="filter-btn px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider bg-tasty-card text-gray-300 border border-tasty-border hover:border-tasty-orange transition-all whitespace-nowrap">
+                Под Эспрессо
+            </button>
+            <button onclick="filterProducts('filter', this)" class="filter-btn px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider bg-tasty-card text-gray-300 border border-tasty-border hover:border-tasty-orange transition-all whitespace-nowrap">
+                Фильтр / Турка / Чашка
+            </button>
+            <button onclick="filterProducts('drip', this)" class="filter-btn px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider bg-tasty-card text-gray-300 border border-tasty-border hover:border-tasty-orange transition-all whitespace-nowrap">
+                Дрип-пакеты
+            </button>
+        </div>
+
+        <!-- PRODUCTS GRID -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- PRODUCT 1: Nutty -->
+            <div class="product-card espresso bg-tasty-card border border-tasty-border rounded-3xl p-6 flex flex-col justify-between hover:border-tasty-orange/50 transition-all duration-300 group">
                 <div>
-                    <div class="relative h-56 overflow-hidden bg-cream-dark">
-                        <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?q=80&w=600&auto=format&fit=crop" alt="Эфиопия Иргачефф" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
-                        <span class="absolute top-4 left-4 bg-caramel text-coffee-900 text-xs font-bold px-3 py-1 rounded-full">Хит Продаж</span>
+                    <!-- Badge and Image -->
+                    <div class="relative h-52 bg-tasty-black rounded-2xl p-4 mb-5 flex items-center justify-center overflow-hidden">
+                        <span class="absolute top-3 left-3 bg-tasty-orange/20 text-tasty-orange border border-tasty-orange/30 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">
+                            Хит Продаж
+                        </span>
+                        <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?q=80&w=600&auto=format&fit=crop" alt="Эспрессо Натти" class="h-full object-contain group-hover:scale-105 transition-transform duration-500">
                     </div>
-                    <div class="p-6 space-y-3">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-semibold text-caramel uppercase tracking-wider">Зерновой / Молотый</span>
-                            <span class="text-xs text-gray-400">100% Арабика</span>
+
+                    <!-- Title & Flavors -->
+                    <div class="space-y-2 mb-4">
+                        <div class="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Эспрессо-смесь</div>
+                        <h3 class="font-display font-black text-xl text-white">Эспрессо Натти (Nutty)</h3>
+                        <div class="flex flex-wrap gap-1.5 pt-1">
+                            <span class="flavor-badge text-tasty-orange text-[11px] font-semibold px-2 py-0.5 rounded-md">Шоколад</span>
+                            <span class="flavor-badge text-tasty-orange text-[11px] font-semibold px-2 py-0.5 rounded-md">Какао</span>
+                            <span class="flavor-badge text-tasty-orange text-[11px] font-semibold px-2 py-0.5 rounded-md">Фундук</span>
                         </div>
-                        <h3 class="font-serif text-xl font-bold text-coffee-800">Эфиопия Иргачефф</h3>
-                        <p class="text-xs text-gray-500 italic">Ноты: Бергамот, жасмин, спелая персик-абрикосовая кислинка</p>
-                        <p class="text-gray-600 text-sm line-clamp-2">Яркий, утонченный кофе с цветочным ароматом и приятным цитрусовым послевкусием.</p>
+                    </div>
+
+                    <!-- Taste Metrics Scale -->
+                    <div class="space-y-1.5 text-xs text-gray-400 py-3 border-y border-tasty-border/50 mb-4">
+                        <div class="flex justify-between items-center">
+                            <span>Кислотность:</span>
+                            <div class="flex gap-1 text-tasty-orange"><i class="fa-solid fa-circle text-[8px]"></i><i class="fa-solid fa-circle text-[8px]"></i><i class="fa-regular fa-circle text-[8px]"></i><i class="fa-regular fa-circle text-[8px]"></i><i class="fa-regular fa-circle text-[8px]"></i></div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span>Плотность:</span>
+                            <div class="flex gap-1 text-tasty-orange"><i class="fa-solid fa-circle text-[8px]"></i><i class="fa-solid fa-circle text-[8px]"></i><i class="fa-solid fa-circle text-[8px]"></i><i class="fa-solid fa-circle text-[8px]"></i><i class="fa-regular fa-circle text-[8px]"></i></div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span>Сладость:</span>
+                            <div class="flex gap-1 text-tasty-orange"><i class="fa-solid fa-circle text-[8px]"></i><i class="fa-solid fa-circle text-[8px]"></i><i class="fa-solid fa-circle text-[8px]"></i><i class="fa-regular fa-circle text-[8px]"></i><i class="fa-regular fa-circle text-[8px]"></i></div>
+                        </div>
+                    </div>
+
+                    <!-- Options Selection -->
+                    <div class="space-y-3 mb-6">
+                        <div>
+                            <label class="block text-[10px] font-bold text-gray-400 uppercase mb-1">Фасовка</label>
+                            <select id="size-nutty" onchange="updatePrice('nutty', 4800, 16500)" class="w-full bg-tasty-black border border-tasty-border rounded-xl px-3 py-2 text-xs font-semibold text-white outline-none focus:border-tasty-orange">
+                                <option value="250g" data-price="4800">250 грамм — 4 800 ₸</option>
+                                <option value="1000g" data-price="16500">1000 грамм (1 кг) — 16 500 ₸</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-[10px] font-bold text-gray-400 uppercase mb-1">Помол</label>
+                            <select id="grind-nutty" class="w-full bg-tasty-black border border-tasty-border rounded-xl px-3 py-2 text-xs font-semibold text-white outline-none focus:border-tasty-orange">
+                                <option value="В зёрнах">В зёрнах (без помола)</option>
+                                <option value="Для Турки">Помол под Турку / Джезву</option>
+                                <option value="Для Эспрессо">Помол под Эспрессо</option>
+                                <option value="Для Чашки">Помол для заваривания в чашке</option>
+                                <option value="Для Гейзерной">Помол под Мока / Гейзер</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
-                <div class="p-6 pt-0 flex items-center justify-between border-t border-gray-50 mt-4">
+
+                <!-- Price and Add to Cart -->
+                <div class="flex items-center justify-between pt-2 border-t border-tasty-border">
                     <div>
-                        <span class="text-xs text-gray-400 block">Цена за 250g</span>
-                        <span class="text-xl font-bold text-coffee-800">5 200 ₸</span>
+                        <span class="text-[10px] text-gray-400 block">Цена:</span>
+                        <span id="price-nutty" class="font-display font-extrabold text-xl text-white">4 800 ₸</span>
                     </div>
-                    <button onclick="openModalWithProduct('Эфиопия Иргачефф (250g)')" class="px-4 py-2.5 bg-coffee-800 hover:bg-coffee-700 text-white text-sm font-semibold rounded-xl transition-all flex items-center gap-2">
-                        <i class="fa-solid fa-cart-shopping text-caramel"></i>
-                        <span>Заказать</span>
+                    <button onclick="addCardToCart('Эспрессо Натти', 'size-nutty', 'grind-nutty', 'price-nutty')" class="px-5 py-3 bg-tasty-orange hover:bg-tasty-orangeHover text-white font-bold text-xs rounded-xl uppercase tracking-wider transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-cart-plus"></i>
+                        <span>В корзину</span>
                     </button>
                 </div>
             </div>
 
-            <!-- Item 2: Beans -->
-            <div class="product-item beans bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+            <!-- PRODUCT 2: Berry -->
+            <div class="product-card espresso bg-tasty-card border border-tasty-border rounded-3xl p-6 flex flex-col justify-between hover:border-tasty-orange/50 transition-all duration-300 group">
                 <div>
-                    <div class="relative h-56 overflow-hidden bg-cream-dark">
-                        <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=600&auto=format&fit=crop" alt="Бразилия Серрадо" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
+                    <div class="relative h-52 bg-tasty-black rounded-2xl p-4 mb-5 flex items-center justify-center overflow-hidden">
+                        <span class="absolute top-3 left-3 bg-rose-500/20 text-rose-400 border border-rose-500/30 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">
+                            Ягодный Профиль
+                        </span>
+                        <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=600&auto=format&fit=crop" alt="Берри" class="h-full object-contain group-hover:scale-105 transition-transform duration-500">
                     </div>
-                    <div class="p-6 space-y-3">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-semibold text-caramel uppercase tracking-wider">Зерновой / Молотый</span>
-                            <span class="text-xs text-gray-400">Классика</span>
+
+                    <div class="space-y-2 mb-4">
+                        <div class="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Эспрессо-смесь</div>
+                        <h3 class="font-display font-black text-xl text-white">Эспрессо Берри (Berry)</h3>
+                        <div class="flex flex-wrap gap-1.5 pt-1">
+                            <span class="flavor-badge text-tasty-orange text-[11px] font-semibold px-2 py-0.5 rounded-md">Спелые Ягоды</span>
+                            <span class="flavor-badge text-tasty-orange text-[11px] font-semibold px-2 py-0.5 rounded-md">Шоколад</span>
+                            <span class="flavor-badge text-tasty-orange text-[11px] font-semibold px-2 py-0.5 rounded-md">Карамель</span>
                         </div>
-                        <h3 class="font-serif text-xl font-bold text-coffee-800">Бразилия Серрадо</h3>
-                        <p class="text-xs text-gray-500 italic">Ноты: Жараный фундук, какао, карамель</p>
-                        <p class="text-gray-600 text-sm line-clamp-2">Плотный кофе со сбалансированным сладковатым вкусом без лишней кислотности.</p>
+                    </div>
+
+                    <div class="space-y-1.5 text-xs text-gray-400 py-3 border-y border-tasty-border/50 mb-4">
+                        <div class="flex justify-between items-center">
+                            <span>Кислотность:</span>
+                            <div class="flex gap-1 text-tasty-orange"><i class="fa-solid fa-circle text-[8px]"></i><i class="fa-solid fa-circle text-[8px]"></i><i class="fa-solid fa-circle text-[8px]"></i><i class="fa-regular fa-circle text-[8px]"></i><i class="fa-regular fa-circle text-[8px]"></i></div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span>Плотность:</span>
+                            <div class="flex gap-1 text-tasty-orange"><i class="fa-solid fa-circle text-[8px]"></i><i class="fa-solid fa-circle text-[8px]"></i><i class="fa-solid fa-circle text-[8px]"></i><i class="fa-regular fa-circle text-[8px]"></i><i class="fa-regular fa-circle text-[8px]"></i></div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span>Сладость:</span>
+                            <div class="flex gap-1 text-tasty-orange"><i class="fa-solid fa-circle text-[8px]"></i><i class="fa-solid fa-circle text-[8px]"></i><i class="fa-solid fa-circle text-[8px]"></i><i class="fa-solid fa-circle text-[8px]"></i><i class="fa-regular fa-circle text-[8px]"></i></div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3 mb-6">
+                        <div>
+                            <label class="block text-[10px] font-bold text-gray-400 uppercase mb-1">Фасовка</label>
+                            <select id="size-berry" onchange="updatePrice('berry', 5000, 17200)" class="w-full bg-tasty-black border border-tasty-border rounded-xl px-3 py-2 text-xs font-semibold text-white outline-none focus:border-tasty-orange">
+                                <option value="250g" data-price="5000">250 грамм — 5 000 ₸</option>
+                                <option value="1000g" data-price="17200">1000 грамм (1 кг) — 17 200 ₸</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-[10px] font-bold text-gray-400 uppercase mb-1">Помол</label>
+                            <select id="grind-berry" class="w-full bg-tasty-black border border-tasty-border rounded-xl px-3 py-2 text-xs font-semibold text-white outline-none focus:border-tasty-orange">
+                                <option value="В зёрнах">В зёрнах (без помола)</option>
+                                <option value="Для Турки">Помол под Турку / Джезву</option>
+                                <option value="Для Эспрессо">Помол под Эспрессо</option>
+                                <option value="Для Чашки">Помол для заваривания в чашке</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
-                <div class="p-6 pt-0 flex items-center justify-between border-t border-gray-50 mt-4">
+
+                <div class="flex items-center justify-between pt-2 border-t border-tasty-border">
                     <div>
-                        <span class="text-xs text-gray-400 block">Цена за 250g</span>
-                        <span class="text-xl font-bold text-coffee-800">4 800 ₸</span>
+                        <span class="text-[10px] text-gray-400 block">Цена:</span>
+                        <span id="price-berry" class="font-display font-extrabold text-xl text-white">5 000 ₸</span>
                     </div>
-                    <button onclick="openModalWithProduct('Бразилия Серрадо (250g)')" class="px-4 py-2.5 bg-coffee-800 hover:bg-coffee-700 text-white text-sm font-semibold rounded-xl transition-all flex items-center gap-2">
-                        <i class="fa-solid fa-cart-shopping text-caramel"></i>
-                        <span>Заказать</span>
+                    <button onclick="addCardToCart('Эспрессо Берри', 'size-berry', 'grind-berry', 'price-berry')" class="px-5 py-3 bg-tasty-orange hover:bg-tasty-orangeHover text-white font-bold text-xs rounded-xl uppercase tracking-wider transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-cart-plus"></i>
+                        <span>В корзину</span>
                     </button>
                 </div>
             </div>
 
-            <!-- Item 3: Beans -->
-            <div class="product-item beans bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+            <!-- PRODUCT 3: Brazil Cerrado -->
+            <div class="product-card filter bg-tasty-card border border-tasty-border rounded-3xl p-6 flex flex-col justify-between hover:border-tasty-orange/50 transition-all duration-300 group">
                 <div>
-                    <div class="relative h-56 overflow-hidden bg-cream-dark">
-                        <img src="https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?q=80&w=600&auto=format&fit=crop" alt="Колумбия Супремо" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
-                        <span class="absolute top-4 left-4 bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full">Выбор Бариста</span>
+                    <div class="relative h-52 bg-tasty-black rounded-2xl p-4 mb-5 flex items-center justify-center overflow-hidden">
+                        <span class="absolute top-3 left-3 bg-amber-500/20 text-amber-400 border border-amber-500/30 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">
+                            Классика
+                        </span>
+                        <img src="https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?q=80&w=600&auto=format&fit=crop" alt="Бразилия Серрадо" class="h-full object-contain group-hover:scale-105 transition-transform duration-500">
                     </div>
-                    <div class="p-6 space-y-3">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-semibold text-caramel uppercase tracking-wider">Зерновой / Молотый</span>
-                            <span class="text-xs text-gray-400">100% Арабика</span>
+
+                    <div class="space-y-2 mb-4">
+                        <div class="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Моносорт (100% Арабика)</div>
+                        <h3 class="font-display font-black text-xl text-white">Бразилия Серрадо</h3>
+                        <div class="flex flex-wrap gap-1.5 pt-1">
+                            <span class="flavor-badge text-tasty-orange text-[11px] font-semibold px-2 py-0.5 rounded-md">Жареный Арахис</span>
+                            <span class="flavor-badge text-tasty-orange text-[11px] font-semibold px-2 py-0.5 rounded-md">Какао</span>
+                            <span class="flavor-badge text-tasty-orange text-[11px] font-semibold px-2 py-0.5 rounded-md">Низкая кислинка</span>
                         </div>
-                        <h3 class="font-serif text-xl font-bold text-coffee-800">Колумбия Супремо</h3>
-                        <p class="text-xs text-gray-500 italic">Ноты: Красное яблоко, тростниковый сахар, какао</p>
-                        <p class="text-gray-600 text-sm line-clamp-2">Сочный, бархатистый вкус с умеренной фруктовой ноткой и длинным сладким послевкусием.</p>
+                    </div>
+
+                    <div class="space-y-1.5 text-xs text-gray-400 py-3 border-y border-tasty-border/50 mb-4">
+                        <div class="flex justify-between items-center">
+                            <span>Кислотность:</span>
+                            <div class="flex gap-1 text-tasty-orange"><i class="fa-solid fa-circle text-[8px]"></i><i class="fa-regular fa-circle text-[8px]"></i><i class="fa-regular fa-circle text-[8px]"></i><i class="fa-regular fa-circle text-[8px]"></i><i class="fa-regular fa-circle text-[8px]"></i></div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span>Плотность:</span>
+                            <div class="flex gap-1 text-tasty-orange"><i class="fa-solid fa-circle text-[8px]"></i><i class="fa-solid fa-circle text-[8px]"></i><i class="fa-solid fa-circle text-[8px]"></i><i class="fa-solid fa-circle text-[8px]"></i><i class="fa-regular fa-circle text-[8px]"></i></div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span>Сладость:</span>
+                            <div class="flex gap-1 text-tasty-orange"><i class="fa-solid fa-circle text-[8px]"></i><i class="fa-solid fa-circle text-[8px]"></i><i class="fa-solid fa-circle text-[8px]"></i><i class="fa-regular fa-circle text-[8px]"></i><i class="fa-regular fa-circle text-[8px]"></i></div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3 mb-6">
+                        <div>
+                            <label class="block text-[10px] font-bold text-gray-400 uppercase mb-1">Фасовка</label>
+                            <select id="size-brazil" onchange="updatePrice('brazil', 4600, 15800)" class="w-full bg-tasty-black border border-tasty-border rounded-xl px-3 py-2 text-xs font-semibold text-white outline-none focus:border-tasty-orange">
+                                <option value="250g" data-price="4600">250 грамм — 4 600 ₸</option>
+                                <option value="1000g" data-price="15800">1000 грамм (1 кг) — 15 800 ₸</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-[10px] font-bold text-gray-400 uppercase mb-1">Помол</label>
+                            <select id="grind-brazil" class="w-full bg-tasty-black border border-tasty-border rounded-xl px-3 py-2 text-xs font-semibold text-white outline-none focus:border-tasty-orange">
+                                <option value="В зёрнах">В зёрнах (без помола)</option>
+                                <option value="Для Турки">Помол под Турку / Джезву</option>
+                                <option value="Для Чашки">Помол для заваривания в чашке</option>
+                                <option value="Для Френч-пресса">Помол для Френч-пресса</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
-                <div class="p-6 pt-0 flex items-center justify-between border-t border-gray-50 mt-4">
+
+                <div class="flex items-center justify-between pt-2 border-t border-tasty-border">
                     <div>
-                        <span class="text-xs text-gray-400 block">Цена за 250g</span>
-                        <span class="text-xl font-bold text-coffee-800">5 000 ₸</span>
+                        <span class="text-[10px] text-gray-400 block">Цена:</span>
+                        <span id="price-brazil" class="font-display font-extrabold text-xl text-white">4 600 ₸</span>
                     </div>
-                    <button onclick="openModalWithProduct('Колумбия Супремо (250g)')" class="px-4 py-2.5 bg-coffee-800 hover:bg-coffee-700 text-white text-sm font-semibold rounded-xl transition-all flex items-center gap-2">
-                        <i class="fa-solid fa-cart-shopping text-caramel"></i>
-                        <span>Заказать</span>
+                    <button onclick="addCardToCart('Бразилия Серрадо', 'size-brazil', 'grind-brazil', 'price-brazil')" class="px-5 py-3 bg-tasty-orange hover:bg-tasty-orangeHover text-white font-bold text-xs rounded-xl uppercase tracking-wider transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-cart-plus"></i>
+                        <span>В корзину</span>
                     </button>
                 </div>
             </div>
 
-            <!-- Item 4: Drinks -->
-            <div class="product-item drinks bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+            <!-- PRODUCT 4: Ethiopia Yirgacheffe -->
+            <div class="product-card filter bg-tasty-card border border-tasty-border rounded-3xl p-6 flex flex-col justify-between hover:border-tasty-orange/50 transition-all duration-300 group">
                 <div>
-                    <div class="relative h-56 overflow-hidden bg-cream-dark">
-                        <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?q=80&w=600&auto=format&fit=crop" alt="Капучино / Латте" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
+                    <div class="relative h-52 bg-tasty-black rounded-2xl p-4 mb-5 flex items-center justify-center overflow-hidden">
+                        <span class="absolute top-3 left-3 bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">
+                            Specialty Q-Score: 86.5
+                        </span>
+                        <img src="https://images.unsplash.com/photo-1588854337236-6889d631faa8?q=80&w=600&auto=format&fit=crop" alt="Эфиопия Иргачефф" class="h-full object-contain group-hover:scale-105 transition-transform duration-500">
                     </div>
-                    <div class="p-6 space-y-3">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-semibold text-caramel uppercase tracking-wider">Напитки с собой</span>
-                            <span class="text-xs text-gray-400">350ml / 450ml</span>
+
+                    <div class="space-y-2 mb-4">
+                        <div class="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Моносорт (Светлая обжарка)</div>
+                        <h3 class="font-display font-black text-xl text-white">Эфиопия Иргачефф</h3>
+                        <div class="flex flex-wrap gap-1.5 pt-1">
+                            <span class="flavor-badge text-tasty-orange text-[11px] font-semibold px-2 py-0.5 rounded-md">Жасмин</span>
+                            <span class="flavor-badge text-tasty-orange text-[11px] font-semibold px-2 py-0.5 rounded-md">Бергамот</span>
+                            <span class="flavor-badge text-tasty-orange text-[11px] font-semibold px-2 py-0.5 rounded-md">Персик</span>
                         </div>
-                        <h3 class="font-serif text-xl font-bold text-coffee-800">Капучино / Латте</h3>
-                        <p class="text-gray-600 text-sm">Приготовленный на свежем зерне Tasty Coffee с нежной молочной пенкой. Доступно овсяное/кокосовое молоко.</p>
+                    </div>
+
+                    <div class="space-y-1.5 text-xs text-gray-400 py-3 border-y border-tasty-border/50 mb-4">
+                        <div class="flex justify-between items-center">
+                            <span>Кислотность:</span>
+                            <div class="flex gap-1 text-tasty-orange"><i class="fa-solid fa-circle text-[8px]"></i><i class="fa-solid fa-circle text-[8px]"></i><i class="fa-solid fa-circle text-[8px]"></i><i class="fa-solid fa-circle text-[8px]"></i><i class="fa-regular fa-circle text-[8px]"></i></div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span>Плотность:</span>
+                            <div class="flex gap-1 text-tasty-orange"><i class="fa-solid fa-circle text-[8px]"></i><i class="fa-solid fa-circle text-[8px]"></i><i class="fa-regular fa-circle text-[8px]"></i><i class="fa-regular fa-circle text-[8px]"></i><i class="fa-regular fa-circle text-[8px]"></i></div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span>Сладость:</span>
+                            <div class="flex gap-1 text-tasty-orange"><i class="fa-solid fa-circle text-[8px]"></i><i class="fa-solid fa-circle text-[8px]"></i><i class="fa-solid fa-circle text-[8px]"></i><i class="fa-solid fa-circle text-[8px]"></i><i class="fa-regular fa-circle text-[8px]"></i></div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3 mb-6">
+                        <div>
+                            <label class="block text-[10px] font-bold text-gray-400 uppercase mb-1">Фасовка</label>
+                            <select id="size-ethiopia" onchange="updatePrice('ethiopia', 5400, 18500)" class="w-full bg-tasty-black border border-tasty-border rounded-xl px-3 py-2 text-xs font-semibold text-white outline-none focus:border-tasty-orange">
+                                <option value="250g" data-price="5400">250 грамм — 5 400 ₸</option>
+                                <option value="1000g" data-price="18500">1000 грамм (1 кг) — 18 500 ₸</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-[10px] font-bold text-gray-400 uppercase mb-1">Помол</label>
+                            <select id="grind-ethiopia" class="w-full bg-tasty-black border border-tasty-border rounded-xl px-3 py-2 text-xs font-semibold text-white outline-none focus:border-tasty-orange">
+                                <option value="В зёрнах">В зёрнах (без помола)</option>
+                                <option value="Для Воронки / Фильтра">Для Воронки / V60 / Фильтра</option>
+                                <option value="Для Чашки">Помол для заваривания в чашке</option>
+                                <option value="Для Турки">Помол под Турку</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
-                <div class="p-6 pt-0 flex items-center justify-between border-t border-gray-50 mt-4">
+
+                <div class="flex items-center justify-between pt-2 border-t border-tasty-border">
                     <div>
-                        <span class="text-xs text-gray-400 block">От</span>
-                        <span class="text-xl font-bold text-coffee-800">1 200 ₸</span>
+                        <span class="text-[10px] text-gray-400 block">Цена:</span>
+                        <span id="price-ethiopia" class="font-display font-extrabold text-xl text-white">5 400 ₸</span>
                     </div>
-                    <button onclick="openModalWithProduct('Капучино / Латте')" class="px-4 py-2.5 bg-coffee-800 hover:bg-coffee-700 text-white text-sm font-semibold rounded-xl transition-all flex items-center gap-2">
-                        <i class="fa-solid fa-mug-hot text-caramel"></i>
-                        <span>Заказать</span>
+                    <button onclick="addCardToCart('Эфиопия Иргачефф', 'size-ethiopia', 'grind-ethiopia', 'price-ethiopia')" class="px-5 py-3 bg-tasty-orange hover:bg-tasty-orangeHover text-white font-bold text-xs rounded-xl uppercase tracking-wider transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-cart-plus"></i>
+                        <span>В корзину</span>
                     </button>
                 </div>
             </div>
 
-            <!-- Item 5: Drinks -->
-            <div class="product-item drinks bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+            <!-- PRODUCT 5: Drip Mix Set -->
+            <div id="drips" class="product-card drip bg-tasty-card border border-tasty-border rounded-3xl p-6 flex flex-col justify-between hover:border-tasty-orange/50 transition-all duration-300 group">
                 <div>
-                    <div class="relative h-56 overflow-hidden bg-cream-dark">
-                        <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80&w=600&auto=format&fit=crop" alt="Флэт Уайт / Эспрессо" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
+                    <div class="relative h-52 bg-tasty-black rounded-2xl p-4 mb-5 flex items-center justify-center overflow-hidden">
+                        <span class="absolute top-3 left-3 bg-purple-500/20 text-purple-400 border border-purple-500/30 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">
+                            Супер Удобно
+                        </span>
+                        <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80&w=600&auto=format&fit=crop" alt="Дрип-пакеты" class="h-full object-contain group-hover:scale-105 transition-transform duration-500">
                     </div>
-                    <div class="p-6 space-y-3">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-semibold text-caramel uppercase tracking-wider">Напитки с собой</span>
-                            <span class="text-xs text-gray-400">Крепкий выбор</span>
+
+                    <div class="space-y-2 mb-4">
+                        <div class="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Дрип-кофе (Порционный)</div>
+                        <h3 class="font-display font-black text-xl text-white">Микс-набор Дрипов Tasty</h3>
+                        <div class="flex flex-wrap gap-1.5 pt-1">
+                            <span class="flavor-badge text-tasty-orange text-[11px] font-semibold px-2 py-0.5 rounded-md">10 различных сортов</span>
+                            <span class="flavor-badge text-tasty-orange text-[11px] font-semibold px-2 py-0.5 rounded-md">Без кофеварки</span>
                         </div>
-                        <h3 class="font-serif text-xl font-bold text-coffee-800">Флэт Уайт / Раф</h3>
-                        <p class="text-gray-600 text-sm">Двойной эспрессо с шелковистым микромолоком или насыщенный ванильно-сливочный Раф кофе.</p>
+                    </div>
+
+                    <p class="text-xs text-gray-400 leading-relaxed mb-4">
+                        Идеально для офиса, поездок и быстрых утренних ритуалов. Просто добавьте горячую воду прямо в чашку!
+                    </p>
+
+                    <div class="space-y-3 mb-6">
+                        <div>
+                            <label class="block text-[10px] font-bold text-gray-400 uppercase mb-1">Упаковка</label>
+                            <select id="size-drip" class="w-full bg-tasty-black border border-tasty-border rounded-xl px-3 py-2 text-xs font-semibold text-white outline-none">
+                                <option value="10 шт в коробке">Коробка 10 дрип-пакетов — 5 500 ₸</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
-                <div class="p-6 pt-0 flex items-center justify-between border-t border-gray-50 mt-4">
+
+                <div class="flex items-center justify-between pt-2 border-t border-tasty-border">
                     <div>
-                        <span class="text-xs text-gray-400 block">От</span>
-                        <span class="text-xl font-bold text-coffee-800">1 400 ₸</span>
+                        <span class="text-[10px] text-gray-400 block">Цена:</span>
+                        <span id="price-drip" class="font-display font-extrabold text-xl text-white">5 500 ₸</span>
                     </div>
-                    <button onclick="openModalWithProduct('Флэт Уайт / Раф')" class="px-4 py-2.5 bg-coffee-800 hover:bg-coffee-700 text-white text-sm font-semibold rounded-xl transition-all flex items-center gap-2">
-                        <i class="fa-solid fa-mug-hot text-caramel"></i>
-                        <span>Заказать</span>
+                    <button onclick="addCardToCart('Микс-набор Дрипов (10 шт)', 'size-drip', 'size-drip', 'price-drip')" class="px-5 py-3 bg-tasty-orange hover:bg-tasty-orangeHover text-white font-bold text-xs rounded-xl uppercase tracking-wider transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-cart-plus"></i>
+                        <span>В корзину</span>
                     </button>
                 </div>
             </div>
 
-            <!-- Item 6: Accessories -->
-            <div class="product-item accessories bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+            <!-- PRODUCT 6: Colombia Supremo -->
+            <div class="product-card filter bg-tasty-card border border-tasty-border rounded-3xl p-6 flex flex-col justify-between hover:border-tasty-orange/50 transition-all duration-300 group">
                 <div>
-                    <div class="relative h-56 overflow-hidden bg-cream-dark">
-                        <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?q=80&w=600&auto=format&fit=crop" alt="Медная Турка" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
+                    <div class="relative h-52 bg-tasty-black rounded-2xl p-4 mb-5 flex items-center justify-center overflow-hidden">
+                        <span class="absolute top-3 left-3 bg-blue-500/20 text-blue-400 border border-blue-500/30 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">
+                            Баланс
+                        </span>
+                        <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?q=80&w=600&auto=format&fit=crop" alt="Колумбия Супремо" class="h-full object-contain group-hover:scale-105 transition-transform duration-500">
                     </div>
-                    <div class="p-6 space-y-3">
-                        <div class="flex items-center justify-between">
-                            <span class="text-xs font-semibold text-caramel uppercase tracking-wider">Аксессуары</span>
-                            <span class="text-xs text-gray-400">Качество</span>
+
+                    <div class="space-y-2 mb-4">
+                        <div class="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Моносорт (100% Арабика)</div>
+                        <h3 class="font-display font-black text-xl text-white">Колумбия Супремо</h3>
+                        <div class="flex flex-wrap gap-1.5 pt-1">
+                            <span class="flavor-badge text-tasty-orange text-[11px] font-semibold px-2 py-0.5 rounded-md">Красное Яблоко</span>
+                            <span class="flavor-badge text-tasty-orange text-[11px] font-semibold px-2 py-0.5 rounded-md">Карамель</span>
+                            <span class="flavor-badge text-tasty-orange text-[11px] font-semibold px-2 py-0.5 rounded-md">Какао</span>
                         </div>
-                        <h3 class="font-serif text-xl font-bold text-coffee-800">Медная Турка (Джезва)</h3>
-                        <p class="text-gray-600 text-sm">Толстостенная медная турка с пищевым оловянным покрытием внутри. Идеально для правильно сваренного кофе.</p>
+                    </div>
+
+                    <div class="space-y-1.5 text-xs text-gray-400 py-3 border-y border-tasty-border/50 mb-4">
+                        <div class="flex justify-between items-center">
+                            <span>Кислотность:</span>
+                            <div class="flex gap-1 text-tasty-orange"><i class="fa-solid fa-circle text-[8px]"></i><i class="fa-solid fa-circle text-[8px]"></i><i class="fa-regular fa-circle text-[8px]"></i><i class="fa-regular fa-circle text-[8px]"></i><i class="fa-regular fa-circle text-[8px]"></i></div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span>Плотность:</span>
+                            <div class="flex gap-1 text-tasty-orange"><i class="fa-solid fa-circle text-[8px]"></i><i class="fa-solid fa-circle text-[8px]"></i><i class="fa-solid fa-circle text-[8px]"></i><i class="fa-regular fa-circle text-[8px]"></i><i class="fa-regular fa-circle text-[8px]"></i></div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span>Сладость:</span>
+                            <div class="flex gap-1 text-tasty-orange"><i class="fa-solid fa-circle text-[8px]"></i><i class="fa-solid fa-circle text-[8px]"></i><i class="fa-solid fa-circle text-[8px]"></i><i class="fa-solid fa-circle text-[8px]"></i><i class="fa-regular fa-circle text-[8px]"></i></div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3 mb-6">
+                        <div>
+                            <label class="block text-[10px] font-bold text-gray-400 uppercase mb-1">Фасовка</label>
+                            <select id="size-colombia" onchange="updatePrice('colombia', 4900, 16900)" class="w-full bg-tasty-black border border-tasty-border rounded-xl px-3 py-2 text-xs font-semibold text-white outline-none focus:border-tasty-orange">
+                                <option value="250g" data-price="4900">250 грамм — 4 900 ₸</option>
+                                <option value="1000g" data-price="16900">1000 грамм (1 кг) — 16 900 ₸</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-[10px] font-bold text-gray-400 uppercase mb-1">Помол</label>
+                            <select id="grind-colombia" class="w-full bg-tasty-black border border-tasty-border rounded-xl px-3 py-2 text-xs font-semibold text-white outline-none focus:border-tasty-orange">
+                                <option value="В зёрнах">В зёрнах (без помола)</option>
+                                <option value="Для Турки">Помол под Турку / Джезву</option>
+                                <option value="Для Чашки">Помол для заваривания в чашке</option>
+                                <option value="Для Эспрессо">Помол под Эспрессо</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
-                <div class="p-6 pt-0 flex items-center justify-between border-t border-gray-50 mt-4">
+
+                <div class="flex items-center justify-between pt-2 border-t border-tasty-border">
                     <div>
-                        <span class="text-xs text-gray-400 block">Стоимость</span>
-                        <span class="text-xl font-bold text-coffee-800">8 500 ₸</span>
+                        <span class="text-[10px] text-gray-400 block">Цена:</span>
+                        <span id="price-colombia" class="font-display font-extrabold text-xl text-white">4 900 ₸</span>
                     </div>
-                    <button onclick="openModalWithProduct('Медная Турка')" class="px-4 py-2.5 bg-coffee-800 hover:bg-coffee-700 text-white text-sm font-semibold rounded-xl transition-all flex items-center gap-2">
-                        <i class="fa-solid fa-cart-shopping text-caramel"></i>
-                        <span>Заказать</span>
+                    <button onclick="addCardToCart('Колумбия Супремо', 'size-colombia', 'grind-colombia', 'price-colombia')" class="px-5 py-3 bg-tasty-orange hover:bg-tasty-orangeHover text-white font-bold text-xs rounded-xl uppercase tracking-wider transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-cart-plus"></i>
+                        <span>В корзину</span>
                     </button>
                 </div>
             </div>
@@ -540,306 +645,370 @@
         </div>
     </section>
 
-    <!-- CONTACTS & LOCATION SECTION -->
-    <section id="contacts" class="py-20 px-4 sm:px-6 lg:px-8 bg-cream-dark border-t border-caramel/10">
+    <!-- WHY TASTY COFFEE SECTION -->
+    <section id="why-us" class="py-16 px-4 sm:px-6 lg:px-8 bg-tasty-card border-y border-tasty-border">
         <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-                
-                <!-- Contact Info Card -->
-                <div class="lg:col-span-5 space-y-8">
-                    <div>
-                        <span class="text-xs sm:text-sm font-bold text-caramel uppercase tracking-widest">Ждем вас в гости</span>
-                        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-coffee-800 mt-2">Контакты & Локация</h2>
-                        <p class="text-gray-600 mt-3 font-light">Наш магазин удобно расположен в 15 микрорайоне города Актау.</p>
-                    </div>
-
-                    <div class="space-y-6">
-                        <!-- Address -->
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 rounded-2xl bg-coffee-800 text-caramel flex items-center justify-center text-xl shrink-0">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-coffee-800">Точный Адрес:</h4>
-                                <p class="text-gray-700 text-sm mt-1">г. Актау, 15 микрорайон, 69 дом</p>
-                                <p class="text-xs text-caramel font-semibold mt-0.5">Здание магазина «Кибернет»</p>
-                            </div>
-                        </div>
-
-                        <!-- Hours -->
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 rounded-2xl bg-coffee-800 text-caramel flex items-center justify-center text-xl shrink-0">
-                                <i class="fa-solid fa-clock"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-coffee-800">Режим Работы:</h4>
-                                <p class="text-gray-700 text-sm mt-1">Ежедневно: с 09:00 до 21:00</p>
-                                <p class="text-xs text-gray-500">Без перерывов и выходных</p>
-                            </div>
-                        </div>
-
-                        <!-- Phone / WhatsApp -->
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 rounded-2xl bg-coffee-800 text-caramel flex items-center justify-center text-xl shrink-0">
-                                <i class="fa-solid fa-phone"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-coffee-800">Связь и Заказы:</h4>
-                                <a href="tel:+77000000000" class="text-gray-700 hover:text-caramel text-sm mt-1 block font-semibold">+7 (700) 000-00-00</a>
-                                <p class="text-xs text-gray-500">Звонки и предзаказы через WhatsApp</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Navigation Action Buttons -->
-                    <div class="pt-4 flex flex-col sm:flex-row gap-3">
-                        <a href="https://2gis.kz/aktau" target="_blank" class="flex-1 px-4 py-3 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-medium text-sm text-center flex items-center justify-center gap-2 shadow-md">
-                            <i class="fa-solid fa-map-location-dot"></i>
-                            <span>Открыть в 2GIS</span>
-                        </a>
-                        <a href="https://maps.google.com/?q=Актау+15+микрорайон+69" target="_blank" class="flex-1 px-4 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-medium text-sm text-center flex items-center justify-center gap-2 shadow-md">
-                            <i class="fa-brands fa-google"></i>
-                            <span>Google Maps</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Right Quick Booking Form & Visual Map Card -->
-                <div class="lg:col-span-7 bg-white p-8 sm:p-10 rounded-3xl shadow-xl border border-gray-100">
-                    <h3 class="font-serif text-2xl font-bold text-coffee-800 mb-2">Форма предзаказа / Наличие</h3>
-                    <p class="text-gray-600 text-sm mb-6">Заполните форму, и мы отложим для вас нужный сорт кофе или приготовим напиток к вашему приходу!</p>
-
-                    <form id="orderForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
-                        <div>
-                            <label class="block text-xs font-bold text-coffee-800 uppercase mb-1">Ваше Имя</label>
-                            <input type="text" id="form-name" required placeholder="Введите ваше имя" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-caramel focus:ring-2 focus:ring-caramel/20 outline-none text-sm">
-                        </div>
-
-                        <div>
-                            <label class="block text-xs font-bold text-coffee-800 uppercase mb-1">Телефон / WhatsApp</label>
-                            <input type="tel" id="form-phone" required placeholder="+7 (700) 000-00-00" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-caramel focus:ring-2 focus:ring-caramel/20 outline-none text-sm">
-                        </div>
-
-                        <div>
-                            <label class="block text-xs font-bold text-coffee-800 uppercase mb-1">Интересующий Кофе / Напиток</label>
-                            <input type="text" id="form-product" placeholder="Например: Бразилия Серрадо 250g (помол под турку)" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-caramel focus:ring-2 focus:ring-caramel/20 outline-none text-sm">
-                        </div>
-
-                        <div>
-                            <label class="block text-xs font-bold text-coffee-800 uppercase mb-1">Комментарий</label>
-                            <textarea id="form-message" rows="3" placeholder="Укажите нужный помол или время прихода..." class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-caramel focus:ring-2 focus:ring-caramel/20 outline-none text-sm"></textarea>
-                        </div>
-
-                        <button type="submit" class="w-full py-4 bg-coffee-800 hover:bg-coffee-700 text-white font-bold rounded-xl text-sm transition-all shadow-lg flex items-center justify-center gap-2">
-                            <i class="fa-brands fa-whatsapp text-lg text-emerald-400"></i>
-                            <span>Отправить сообщение в WhatsApp</span>
-                        </button>
-                    </form>
-                </div>
-
+            <div class="text-center max-w-3xl mx-auto space-y-3 mb-12">
+                <span class="text-xs font-bold text-tasty-orange uppercase tracking-widest">Почему Tasty Coffee?</span>
+                <h2 class="font-display text-3xl sm:text-4xl font-black text-white uppercase">Стандарты мирового уровня</h2>
+                <p class="text-gray-400 text-sm font-light">Tasty Coffee — крупнейшая ростерия Specialty кофе в СНГ, известная бескомпромиссным контролем качества.</p>
             </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-tasty-black p-8 rounded-3xl border border-tasty-border space-y-4">
+                    <div class="w-12 h-12 rounded-2xl bg-tasty-orange/20 text-tasty-orange flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-fire-flame-curved"></i>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-white">Ростеры Loring</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Обжарка на лучших американских ростерах Loring с конвекционным нагревом сохраняет максимум естественной сладости и аромата зерна.
+                    </p>
+                </div>
+
+                <div class="bg-tasty-black p-8 rounded-3xl border border-tasty-border space-y-4">
+                    <div class="w-12 h-12 rounded-2xl bg-tasty-orange/20 text-tasty-orange flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-microscope"></i>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-white">Колориметры & Q-Graders</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Каждая батч-обжарка проверяется колориметрами на соответствие цвету и каппится сертифицированными Q-грейдерами.
+                    </p>
+                </div>
+
+                <div class="bg-tasty-black p-8 rounded-3xl border border-tasty-border space-y-4">
+                    <div class="w-12 h-12 rounded-2xl bg-tasty-orange/20 text-tasty-orange flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-white">В Актау без ожидания</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Вам больше не нужно ждать посылки неделями. Все популярные позиции Tasty Coffee всегда в наличии в 15 мкр (магазин Кибернет).
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCATION & CONTACTS SECTION -->
+    <section id="location" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            
+            <div class="lg:col-span-5 space-y-8">
+                <div>
+                    <span class="text-xs font-bold text-tasty-orange uppercase tracking-widest block mb-1">Точка самовывоза</span>
+                    <h2 class="font-display text-3xl sm:text-4xl font-black text-white uppercase">Ждём вас в Актау</h2>
+                    <p class="text-gray-400 text-sm mt-2">Приходите выбрать кофе лично или заберите предзаказанную пачку с готовым помолом!</p>
+                </div>
+
+                <div class="space-y-6 text-sm">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-2xl bg-tasty-card border border-tasty-border text-tasty-orange flex items-center justify-center text-xl shrink-0">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white">Адрес магазина:</h4>
+                            <p class="text-gray-300 mt-0.5">г. Актау, 15 микрорайон, 69 дом</p>
+                            <span class="inline-block mt-1 text-xs text-tasty-orange font-bold bg-tasty-orange/10 px-2.5 py-0.5 rounded-md border border-tasty-orange/20">
+                                Магазин «Кибернет»
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-2xl bg-tasty-card border border-tasty-border text-tasty-orange flex items-center justify-center text-xl shrink-0">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white">Режим работы:</h4>
+                            <p class="text-gray-300 mt-0.5">Пн - Вс: 09:00 - 21:00</p>
+                            <p class="text-xs text-gray-500">Без перерывов и выходных</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-2xl bg-tasty-card border border-tasty-border text-tasty-orange flex items-center justify-center text-xl shrink-0">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white">Быстрая связь:</h4>
+                            <a href="https://wa.me/77000000000" target="_blank" class="text-emerald-400 hover:text-emerald-300 font-semibold block mt-0.5">
+                                +7 (700) 000-00-00 (WhatsApp)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation buttons -->
+                <div class="pt-2 flex flex-col sm:flex-row gap-3">
+                    <a href="https://2gis.kz/aktau" target="_blank" class="flex-1 px-4 py-3 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-bold text-xs uppercase tracking-wider text-center flex items-center justify-center gap-2 shadow-lg">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                        <span>Открыть в 2GIS</span>
+                    </a>
+                    <a href="https://maps.google.com/?q=Актау+15+микрорайон+69" target="_blank" class="flex-1 px-4 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-bold text-xs uppercase tracking-wider text-center flex items-center justify-center gap-2 shadow-lg">
+                        <i class="fa-brands fa-google"></i>
+                        <span>Google Maps</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Map Mock Card -->
+            <div class="lg:col-span-7 bg-tasty-card border border-tasty-border rounded-3xl p-6 sm:p-8 space-y-6">
+                <div class="flex items-center justify-between">
+                    <h3 class="font-display font-bold text-xl text-white">Карта проезда</h3>
+                    <span class="text-xs text-gray-400"><i class="fa-solid fa-circle text-emerald-500 text-[8px] mr-1"></i>Открыто сейчас</span>
+                </div>
+
+                <div class="relative h-72 rounded-2xl overflow-hidden bg-tasty-black border border-tasty-border flex items-center justify-center">
+                    <!-- Map Graphic Preview -->
+                    <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=800&auto=format&fit=crop" alt="Карта Актау" class="w-full h-full object-cover opacity-40">
+                    <div class="absolute inset-0 bg-gradient-to-t from-tasty-black via-transparent to-transparent"></div>
+                    
+                    <div class="absolute text-center p-6 space-y-3">
+                        <div class="w-12 h-12 bg-tasty-orange text-white rounded-full flex items-center justify-center mx-auto text-xl shadow-2xl animate-bounce">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div class="bg-tasty-black/90 backdrop-blur-md px-4 py-2 rounded-xl border border-tasty-border">
+                            <div class="font-bold text-white text-sm">Coffein Aktau</div>
+                            <div class="text-xs text-tasty-orange">15 мкр, 69 дом (Кибернет)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="text-xs text-gray-400 text-center">
+                    Самовывоз доступен в часы работы магазина. Также отправляем курьером Yandex по городу Актау.
+                </p>
+            </div>
+
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-coffee-900 text-white py-12 border-t border-caramel/20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-            <div class="flex items-center justify-center gap-3">
-                <div class="w-8 h-8 rounded-full bg-caramel flex items-center justify-center text-coffee-900 font-bold text-sm">
-                    <i class="fa-solid fa-mug-hot"></i>
-                </div>
-                <span class="font-serif text-xl font-bold tracking-wide">TASTY COFFEE АКТАУ</span>
+    <footer class="bg-tasty-black border-t border-tasty-border py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-5">
+            <!-- Footer Round Logo Emblem -->
+            <div class="w-20 h-20 rounded-full bg-[#3A2117] border-2 border-tasty-orange/40 mx-auto flex items-center justify-center p-2 shadow-2xl">
+                <svg viewBox="0 0 200 200" class="w-full h-full text-white">
+                    <!-- 3 Coffee Beans -->
+                    <g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round">
+                        <path d="M 70 65 C 55 40, 90 20, 100 45 C 110 20, 145 40, 130 65 C 115 85, 85 85, 70 65 Z" fill="currentColor"/>
+                        <path d="M 85 30 Q 100 50 115 70" stroke="#3A2117" stroke-width="6"/>
+                        <path d="M 40 85 C 30 65, 60 50, 70 70 C 80 50, 110 65, 95 85 C 80 100, 50 100, 40 85 Z" fill="currentColor"/>
+                        <path d="M 52 58 Q 67 75 80 92" stroke="#3A2117" stroke-width="5"/>
+                        <path d="M 105 85 C 95 65, 125 50, 135 70 C 145 50, 175 65, 160 85 C 145 100, 115 100, 105 85 Z" fill="currentColor"/>
+                        <path d="M 118 58 Q 133 75 146 92" stroke="#3A2117" stroke-width="5"/>
+                    </g>
+                    <text x="50%" y="128" text-anchor="middle" fill="white" font-family="'Montserrat', sans-serif" font-weight="800" font-size="24" letter-spacing="2">COFFEE</text>
+                    <ellipse cx="158" cy="122" rx="16" ry="14" fill="none" stroke="white" stroke-width="4"/>
+                    <text x="158" y="128" text-anchor="middle" fill="white" font-family="'Montserrat', sans-serif" font-weight="800" font-size="16">IN</text>
+                    <text x="50%" y="155" text-anchor="middle" fill="#E0D5C1" font-family="'Inter', sans-serif" font-weight="600" font-size="10" letter-spacing="1">МАГАЗИН ЗЕРНОВОГО КОФЕ</text>
+                    <text x="50%" y="172" text-anchor="middle" fill="#A0A0A0" font-family="'Inter', sans-serif" font-size="9">г. Актау</text>
+                </svg>
             </div>
 
-            <p class="text-xs text-gray-400 max-w-md mx-auto">
-                г. Актау, 15 микрорайон, 69 дом, магазин «Кибернет». Продажа премиального свежеобжаренного кофе и напитков.
-            </p>
-
-            <div class="text-xs text-gray-500 pt-4 border-t border-white/5">
-                © <span id="year"></span> Tasty Coffee Aktau. Все права защищены.
-            </div>
+            <div class="font-display font-black text-xl text-white tracking-widest uppercase">COFFEE <span class="text-tasty-orange">IN</span> AKTAU</div>
+            <p class="text-xs text-gray-400 max-w-md mx-auto">Официальный магазин зернового кофе Tasty Coffee в г. Актау, 15 микрорайон, 69 дом (магазин «Кибернет»).</p>
+            <div class="text-[11px] text-gray-600">© <span id="year"></span> COFFEE IN AKTAU. Все права защищены.</div>
         </div>
     </footer>
 
-    <!-- FLOATING WHATSAPP BUTTON -->
-    <a href="https://wa.me/77000000000?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%AF%20%D1%85%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%20%D0%BA%D0%BE%D1%84%D0%B5%20Tasty%20Coffee" 
-       target="_blank" 
-       class="fixed bottom-6 right-6 z-40 w-14 h-14 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full flex items-center justify-center text-2xl shadow-2xl transition-all transform hover:scale-110 gold-glow"
-       title="Написать в WhatsApp">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
-
-    <!-- ORDER MODAL DIALOG -->
-    <div id="orderModal" class="fixed inset-0 z-50 hidden bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 space-y-6 relative shadow-2xl">
-            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 p-2 text-xl">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-
-            <div class="text-center space-y-2">
-                <div class="w-12 h-12 bg-caramel/20 text-caramel rounded-full flex items-center justify-center mx-auto text-xl">
-                    <i class="fa-solid fa-bag-shopping"></i>
+    <!-- CART DRAWER / MODAL -->
+    <div id="cart-drawer" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex justify-end transition-opacity">
+        <div class="w-full max-w-md bg-tasty-black h-full border-l border-tasty-border flex flex-col justify-between p-6 overflow-y-auto">
+            
+            <div>
+                <!-- Drawer Header -->
+                <div class="flex items-center justify-between pb-4 border-b border-tasty-border">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-bag-shopping text-tasty-orange text-xl"></i>
+                        <h3 class="font-display font-bold text-lg text-white">Ваша Корзина</h3>
+                    </div>
+                    <button onclick="toggleCartDrawer()" class="text-gray-400 hover:text-white p-2">
+                        <i class="fa-solid fa-xmark text-xl"></i>
+                    </button>
                 </div>
-                <h3 class="font-serif text-2xl font-bold text-coffee-800">Быстрый Предзаказ</h3>
-                <p class="text-xs text-gray-500">Заполните форму для оформления через WhatsApp</p>
+
+                <!-- Items List Container -->
+                <div id="cart-items" class="py-4 space-y-4">
+                    <!-- Dynamic cart items will render here -->
+                </div>
             </div>
 
-            <div class="space-y-4">
-                <div>
-                    <label class="block text-xs font-bold text-coffee-800 uppercase mb-1">Выбранный товар</label>
-                    <input type="text" id="modal-product" readonly class="w-full px-4 py-2.5 rounded-xl bg-gray-100 border border-gray-200 text-sm font-semibold text-coffee-800">
+            <!-- Drawer Bottom Checkout Form -->
+            <div class="pt-4 border-t border-tasty-border space-y-4">
+                <div class="flex justify-between items-center text-sm font-bold">
+                    <span class="text-gray-400 uppercase">Итого к оплате:</span>
+                    <span id="cart-total" class="font-display text-2xl text-tasty-orange">0 ₸</span>
                 </div>
 
-                <div>
-                    <label class="block text-xs font-bold text-coffee-800 uppercase mb-1">Помол / Подготовка</label>
-                    <select id="modal-grind" class="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm outline-none">
-                        <option value="В зернах">В зёрнах (без помола)</option>
-                        <option value="Помол под Турку">Помол под Турку (ультратонкий)</option>
-                        <option value="Помол под Эспрессо">Помол под Эспрессо-машину</option>
-                        <option value="Помол под Френч-пресс">Помол под Френч-пресс / Гейзер</option>
-                        <option value="Помол под Фильтр">Помол под Фильтр / Воронку</option>
+                <!-- Fast Order Inputs -->
+                <div class="space-y-3">
+                    <input type="text" id="cust-name" placeholder="Ваше Имя" class="w-full bg-tasty-card border border-tasty-border rounded-xl px-4 py-2.5 text-xs text-white outline-none focus:border-tasty-orange">
+                    <input type="tel" id="cust-phone" placeholder="Телефон / WhatsApp" class="w-full bg-tasty-card border border-tasty-border rounded-xl px-4 py-2.5 text-xs text-white outline-none focus:border-tasty-orange">
+                    
+                    <select id="cust-delivery" class="w-full bg-tasty-card border border-tasty-border rounded-xl px-4 py-2.5 text-xs text-white outline-none">
+                        <option value="Самовывоз (15 мкр 69 дом)">Самовывоз из 15 мкр 69 дом (Кибернет)</option>
+                        <option value="Доставка по Актау (Яндекс Курьер)">Доставка Яндекс Курьером по Актау</option>
                     </select>
                 </div>
 
-                <div>
-                    <label class="block text-xs font-bold text-coffee-800 uppercase mb-1">Ваше Имя</label>
-                    <input type="text" id="modal-name" placeholder="Введите имя" class="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm outline-none focus:border-caramel">
-                </div>
-
-                <button onclick="sendModalOrder()" class="w-full py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl text-sm transition-all flex items-center justify-center gap-2 shadow-md">
+                <button onclick="checkoutToWhatsApp()" class="w-full py-4 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-all flex items-center justify-center gap-2 shadow-lg">
                     <i class="fa-brands fa-whatsapp text-lg"></i>
-                    <span>Перейти к заказу в WhatsApp</span>
+                    <span>Оформить заказ в WhatsApp</span>
                 </button>
             </div>
+
         </div>
     </div>
 
-    <!-- JAVASCRIPT INTERACTIVITY -->
+    <!-- JAVASCRIPT APP LOGIC -->
     <script>
-        // Set current year
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
+        // Cart State Array
+        let cart = [];
 
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+        // Dynamic Price Calculator for Product Cards
+        function updatePrice(id, price250, price1000) {
+            const selectSize = document.getElementById(`size-${id}`);
+            const priceEl = document.getElementById(`price-${id}`);
+            const price = selectSize.value === '1000g' ? price1000 : price250;
+            priceEl.textContent = `${price.toLocaleString('ru-RU')} ₸`;
+        }
 
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
+        // Filter Functionality
+        function filterProducts(category, btn) {
+            document.querySelectorAll('.filter-btn').forEach(b => {
+                b.classList.remove('bg-tasty-orange', 'text-white');
+                b.classList.add('bg-tasty-card', 'text-gray-300');
             });
-        });
+            btn.classList.add('bg-tasty-orange', 'text-white');
+            btn.classList.remove('bg-tasty-card', 'text-gray-300');
 
-        // Category Filter
-        function filterCategory(category, button) {
-            // Update active state on buttons
-            document.querySelectorAll('.category-tab').forEach(btn => {
-                btn.classList.remove('active', 'bg-coffee-800', 'text-white');
-                btn.classList.add('bg-white', 'text-coffee-800');
-            });
-            button.classList.add('active', 'bg-coffee-800', 'text-white');
-            button.classList.remove('bg-white', 'text-coffee-800');
-
-            // Show/Hide products
-            const items = document.querySelectorAll('.product-item');
-            items.forEach(item => {
-                if (category === 'all' || item.classList.contains(category)) {
-                    item.style.display = 'flex';
+            const cards = document.querySelectorAll('.product-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.classList.contains(category)) {
+                    card.style.display = 'flex';
                 } else {
-                    item.style.display = 'none';
+                    card.style.display = 'none';
                 }
             });
         }
 
-        // Coffee Brew Calculator Logic
-        const brewData = {
-            turk: {
-                title: 'Бразилия Серрадо',
-                desc: 'Классический плотный кофе с нотами жареных орехов, темного шоколада и карамели. Ультратонкий помол идеально подходит для создания густой пенки в турке.',
-                price: '4 800 ₸',
-                tag: 'Рекомендуемый сорт для Турки',
-                img: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=500&auto=format&fit=crop'
-            },
-            espresso: {
-                title: 'Колумбия Супремо',
-                desc: 'Плотный тело с нотами спелого красного яблока, темного какао и тростникового сахара. Прекрасно раскрывается в эспрессо-машинах и с молоком.',
-                price: '5 000 ₸',
-                tag: 'Идеально для Эспрессо',
-                img: 'https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?q=80&w=500&auto=format&fit=crop'
-            },
-            french: {
-                title: 'Гватемала Уэуэтенанго',
-                desc: 'Богатый ягодный и шоколодный букет. Насыщенный вкус и глубокий аромат отлично вытягиваются при длительном настаивании во френч-прессе.',
-                price: '5 100 ₸',
-                tag: 'Рекомендуется для Френч-Пресса',
-                img: 'https://images.unsplash.com/photo-1559056199-641a0ac8b55e?q=80&w=500&auto=format&fit=crop'
-            },
-            filter: {
-                title: 'Эфиопия Иргачефф',
-                desc: 'Цветочные ноты жасмина, бергамота и свежая персиковая кислинка. Высший сорт Specialty арабики для ценителей чистых капельных методов заваривания.',
-                price: '5 200 ₸',
-                tag: 'Идеально для Фильтр-кофе',
-                img: 'https://images.unsplash.com/photo-1588854337236-6889d631faa8?q=80&w=500&auto=format&fit=crop'
-            }
-        };
+        // Add from Product Card with Selectors
+        function addCardToCart(name, sizeId, grindId, priceId) {
+            const sizeVal = document.getElementById(sizeId).value;
+            const grindVal = document.getElementById(grindId) ? document.getElementById(grindId).value : 'В зёрнах';
+            const rawPrice = document.getElementById(priceId).textContent.replace(/[^0-9]/g, '');
+            const price = parseInt(rawPrice, 10);
 
-        function selectBrewMethod(method, btnElement) {
-            // Update button styles
-            document.querySelectorAll('.brew-btn').forEach(btn => {
-                btn.classList.remove('border-caramel', 'bg-coffee-700/80', 'active');
-                btn.classList.add('border-coffee-600', 'bg-coffee-700/30');
+            addToCart(name, sizeVal, grindVal, price);
+        }
+
+        // Quick Add Helper
+        function quickAddToCart(name, price, size, grind) {
+            addToCart(name, size, grind, price);
+        }
+
+        // Main Cart Push
+        function addToCart(name, size, grind, price) {
+            const existingIndex = cart.findIndex(item => item.name === name && item.size === size && item.grind === grind);
+            if (existingIndex > -1) {
+                cart[existingIndex].qty += 1;
+            } else {
+                cart.push({ name, size, grind, price, qty: 1 });
+            }
+            renderCart();
+            toggleCartDrawer(true);
+        }
+
+        // Cart Drawer Control
+        function toggleCartDrawer(forceOpen = false) {
+            const drawer = document.getElementById('cart-drawer');
+            if (forceOpen) {
+                drawer.classList.remove('hidden');
+            } else {
+                drawer.classList.toggle('hidden');
+            }
+        }
+
+        // Quantity Changes
+        function changeQty(index, delta) {
+            cart[index].qty += delta;
+            if (cart[index].qty <= 0) {
+                cart.splice(index, 1);
+            }
+            renderCart();
+        }
+
+        // Render Cart State
+        function renderCart() {
+            const itemsContainer = document.getElementById('cart-items');
+            const cartCount = document.getElementById('cart-count');
+            const cartTotal = document.getElementById('cart-total');
+
+            let total = 0;
+            let totalQty = 0;
+
+            if (cart.length === 0) {
+                itemsContainer.innerHTML = `
+                    <div class="text-center py-12 text-gray-500 space-y-3">
+                        <i class="fa-solid fa-mug-saucer text-4xl text-tasty-border"></i>
+                        <p class="text-xs">Ваша корзина пуста</p>
+                    </div>
+                `;
+            } else {
+                itemsContainer.innerHTML = cart.map((item, index) => {
+                    const itemTotal = item.price * item.qty;
+                    total += itemTotal;
+                    totalQty += item.qty;
+
+                    return `
+                        <div class="bg-tasty-card border border-tasty-border p-4 rounded-2xl flex items-center justify-between text-xs">
+                            <div class="space-y-1">
+                                <div class="font-bold text-white text-sm">${item.name}</div>
+                                <div class="text-tasty-orange font-medium">${item.size} • ${item.grind}</div>
+                                <div class="text-gray-400">${item.price.toLocaleString('ru-RU')} ₸ × ${item.qty}</div>
+                            </div>
+                            <div class="flex items-center gap-2 bg-tasty-black p-1.5 rounded-xl border border-tasty-border">
+                                <button onclick="changeQty(${index}, -1)" class="w-6 h-6 flex items-center justify-center text-gray-400 hover:text-white font-bold">-</button>
+                                <span class="font-bold text-white px-1">${item.qty}</span>
+                                <button onclick="changeQty(${index}, 1)" class="w-6 h-6 flex items-center justify-center text-gray-400 hover:text-white font-bold">+</button>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            }
+
+            cartCount.textContent = totalQty;
+            cartTotal.textContent = `${total.toLocaleString('ru-RU')} ₸`;
+        }
+
+        // Send Order to WhatsApp
+        function checkoutToWhatsApp() {
+            if (cart.length === 0) {
+                alert('Ваша корзина пуста! Выберите кофе из каталога.');
+                return;
+            }
+
+            const name = document.getElementById('cust-name').value || 'Клиент';
+            const phone = document.getElementById('cust-phone').value || 'Не указан';
+            const delivery = document.getElementById('cust-delivery').value;
+
+            let text = `Здравствуйте, Coffein Aktau! Хочу заказать кофе Tasty Coffee:\n\n`;
+            
+            let total = 0;
+            cart.forEach((item, i) => {
+                const subtotal = item.price * item.qty;
+                total += subtotal;
+                text += `${i + 1}. ${item.name} (${item.size})\n   • Помол: ${item.grind}\n   • Кол-во: ${item.qty} шт. (${subtotal.toLocaleString('ru-RU')} ₸)\n`;
             });
-            btnElement.classList.add('border-caramel', 'bg-coffee-700/80', 'active');
-            btnElement.classList.remove('border-coffee-600', 'bg-coffee-700/30');
 
-            // Update details
-            const data = brewData[method];
-            if (data) {
-                document.getElementById('rec-title').textContent = data.title;
-                document.getElementById('rec-desc').textContent = data.desc;
-                document.getElementById('rec-price').innerHTML = `${data.price} <span class="text-xs text-gray-400 font-normal">/ 250г</span>`;
-                document.getElementById('rec-img').src = data.img;
-            }
-        }
+            text += `\n--------------------------\n`;
+            text += `Итого: ${total.toLocaleString('ru-RU')} ₸\n`;
+            text += `Имя: ${name}\n`;
+            text += `Телефон: ${phone}\n`;
+            text += `Способ получения: ${delivery}\n`;
+            text += `\nЖду подтверждения наличия!`;
 
-        // Modal Order Windows
-        function openModal(productName) {
-            document.getElementById('modal-product').value = productName;
-            document.getElementById('orderModal').classList.remove('hidden');
-        }
-
-        function openModalWithProduct(productName) {
-            openModal(productName);
-        }
-
-        function closeModal() {
-            document.getElementById('orderModal').classList.add('hidden');
-        }
-
-        function sendModalOrder() {
-            const product = document.getElementById('modal-product').value;
-            const grind = document.getElementById('modal-grind').value;
-            const name = document.getElementById('modal-name').value || 'Клиент';
-
-            const text = `Здравствуйте! Меня зовут ${name}. Хочу заказать из магазина в Актау (15 мкр 69 дом): ${product}. Помол: ${grind}.`;
-            const encoded = encodeURIComponent(text);
-            window.open(`https://wa.me/77000000000?text=${encoded}`, '_blank');
-            closeModal();
-        }
-
-        // Quick Form Submission
-        function handleFormSubmit(e) {
-            e.preventDefault();
-            const name = document.getElementById('form-name').value;
-            const phone = document.getElementById('form-phone').value;
-            const product = document.getElementById('form-product').value || 'Консультация по кофе';
-            const message = document.getElementById('form-message').value;
-
-            const text = `Заявка с сайта Tasty Coffee (Актау, 15 мкр 69 дом):\nИмя: ${name}\nТелефон: ${phone}\nТовар: ${product}\nКомментарий: ${message}`;
             const encoded = encodeURIComponent(text);
             window.open(`https://wa.me/77000000000?text=${encoded}`, '_blank');
         }
